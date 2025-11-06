@@ -1,0 +1,77 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": ".NET Core: Launch Backend API (Development)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build-backend",
+      "program": "${workspaceFolder}/Backend/RFPAnalyzer.API/bin/Debug/net8.0/RFPAnalyzer.API.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/Backend/RFPAnalyzer.API",
+      "stopAtEntry": false,
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "\\bNow listening on:\\s+(https?://\\S+)",
+        "uriFormat": "%s/swagger"
+      },
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "sourceFileMap": {
+        "/Views": "${workspaceFolder}/Views"
+      }
+    },
+    {
+      "name": ".NET Core: Launch Backend API (Production)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build-backend-release",
+      "program": "${workspaceFolder}/Backend/RFPAnalyzer.API/bin/Release/net8.0/RFPAnalyzer.API.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/Backend/RFPAnalyzer.API",
+      "stopAtEntry": false,
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Production"
+      }
+    },
+    {
+      "name": ".NET Core: Attach to Process",
+      "type": "coreclr",
+      "request": "attach"
+    },
+    {
+      "name": "Chrome: Launch Frontend (Development)",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:5173",
+      "webRoot": "${workspaceFolder}/Frontend/rfp-analyzer/src",
+      "preLaunchTask": "start-frontend-dev",
+      "sourceMapPathOverrides": {
+        "webpack:///./src/*": "${webRoot}/*"
+      }
+    },
+    {
+      "name": "Edge: Launch Frontend (Development)",
+      "type": "msedge",
+      "request": "launch",
+      "url": "http://localhost:5173",
+      "webRoot": "${workspaceFolder}/Frontend/rfp-analyzer/src",
+      "preLaunchTask": "start-frontend-dev",
+      "sourceMapPathOverrides": {
+        "webpack:///./src/*": "${webRoot}/*"
+      }
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Full Stack: Launch Backend + Frontend",
+      "configurations": [
+        ".NET Core: Launch Backend API (Development)",
+        "Chrome: Launch Frontend (Development)"
+      ],
+      "stopAll": true,
+      "preLaunchTask": "build-all"
+    }
+  ]
+}
