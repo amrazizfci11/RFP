@@ -1,0 +1,58 @@
+# Backend - .NET
+*.swp
+*.*~
+project.lock.json
+.DS_Store
+*.pyc
+nupkg/
+
+# Visual Studio Code
+.vscode/
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+msbuild.log
+msbuild.err
+msbuild.wrn
+
+# Visual Studio
+.vs/
+
+# Uploads folder
+Backend/RFPAnalyzer.API/Uploads/
+
+# Frontend - React
+Frontend/rfp-analyzer/node_modules/
+Frontend/rfp-analyzer/dist/
+Frontend/rfp-analyzer/.env
+Frontend/rfp-analyzer/.env.local
+Frontend/rfp-analyzer/.env.development.local
+Frontend/rfp-analyzer/.env.test.local
+Frontend/rfp-analyzer/.env.production.local
+Frontend/rfp-analyzer/npm-debug.log*
+Frontend/rfp-analyzer/yarn-debug.log*
+Frontend/rfp-analyzer/yarn-error.log*
+
+# Secrets
+appsettings.Production.json
+*.secrets.json
+
+# Database
+*.db
+*.db-shm
+*.db-wal
