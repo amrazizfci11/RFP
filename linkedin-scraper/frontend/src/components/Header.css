@@ -1,0 +1,90 @@
+.header {
+  background-color: var(--bg-primary);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.logo-icon {
+  background-color: var(--primary-color);
+  color: white;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  padding: 8px 0;
+}
+
+.nav-link:hover {
+  color: var(--primary-color);
+}
+
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-left: 24px;
+  border-left: 1px solid var(--border-color);
+}
+
+.user-name {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.btn-sm {
+  padding: 8px 16px;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    gap: 12px;
+  }
+
+  .nav-link {
+    font-size: 14px;
+  }
+
+  .user-name {
+    display: none;
+  }
+
+  .user-menu {
+    padding-left: 12px;
+  }
+}
