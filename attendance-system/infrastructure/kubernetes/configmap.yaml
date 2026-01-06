@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: attendance-config
+  namespace: attendance-system
+data:
+  ASPNETCORE_ENVIRONMENT: "Production"
+  Jwt__Issuer: "AttendanceSystem"
+  Jwt__Audience: "AttendanceSystemClients"
+  Jwt__AccessTokenExpirationMinutes: "60"
+  Jwt__RefreshTokenExpirationDays: "7"
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: attendance-secrets
+  namespace: attendance-system
+type: Opaque
+stringData:
+  POSTGRES_USER: "postgres"
+  POSTGRES_PASSWORD: "your-secure-password-here"
+  POSTGRES_DB: "attendance_db"
+  JWT_SECRET: "your-super-secret-key-that-should-be-at-least-32-characters-long"
+  RABBITMQ_USER: "admin"
+  RABBITMQ_PASSWORD: "secure-rabbitmq-password"
